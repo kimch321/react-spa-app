@@ -1,5 +1,5 @@
 import React from "react"
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 // localhost:3000/          -> Home
 // localhost:3000/stuff     -> Stuff
@@ -7,11 +7,13 @@ import {Link} from "react-router-dom";
 
 const Menu = () => {
     return (
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="/stuff">Stuff</Link>
-            <Link to="/contact">Contact</Link>
-        </nav>
+        <ul className={"header"}>
+            <nav>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to="/stuff">Stuff</NavLink>
+                <NavLink to="/contact">Contact</NavLink>
+            </nav>
+        </ul>
     )
 }
 

@@ -1,32 +1,13 @@
 import React from "react"
-import {Link, Route, Routes} from "react-router-dom";
-import Home from "./pages/Home";
-import Stuff from "./pages/Stuff";
-import Contact from "./pages/Contact";
 import Menu from "./components/Menu";
-
-// localhost:3000/          -> Home
-// localhost:3000/stuff     -> Stuff
-// localhost:3000/contact   -> Contact
+import Contents from "./components/Contents";
 
 function App() {
   return (
     <div>
       <h1>Simple SPA</h1>
-      <ul className={"header"}>
-        <nav>
-          <li><a href="/">Home</a></li>
-          <li><a href="/stuff">Stuff</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </nav>
-      </ul>
-      <ul className={"content"}>
-          <Routes>
-              <Route path='/' element={<Home />}></Route>
-              <Route path='/stuff' element={<Stuff />}></Route>
-              <Route path='/contact' element={<Contact />}></Route>
-          </Routes>
-      </ul>
+      <Menu />
+      <Contents />
     </div>
   );
 }
@@ -51,3 +32,18 @@ export default App;
 // 따라서, 404 페이지는 라우트 정의의 가장 마지막에 위치시켜야 합니다.
 // 이를 통해, 모든 라우트와 일치하지 않는 URL 경로에 대해서만
 // 404 페이지가 렌더링되도록 보장할 수 있습니다.
+
+
+// 리액트 컴포넌트가 대문자로 시작해야 하는 이유
+// 리액트에서 컴포넌트는 대문자로 시작해야 합니다.
+// 이유는 리액트가 컴포넌트를 인식하는 방식 때문입니다.
+
+// React.createElement() 메서드를 사용하여 컴포넌트를 생성할 때,
+// 첫 번째 인자로 컴포넌트 이름을 문자열로 넘겨주게 되는데,
+// 이때 컴포넌트 이름이 대문자로 시작하면,
+// 리액트는 이를 사용자 정의 컴포넌트로 인식합니다.
+// 반면 소문자로 시작하는 경우에는, HTML 태그로 인식합니다.
+
+// 따라서, 컴포넌트의 이름을 소문자로 시작하면,
+// 올바른 동작을 보장받지 못하게 됩니다.
+// 따라서 컴포넌트 이름은 대문자로 시작해야 합니다.
